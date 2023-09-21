@@ -1,0 +1,8 @@
+# Ignore Folders
+target
+.vscode
+.settings
+
+# Ignore Files
+.classpath
+.project
