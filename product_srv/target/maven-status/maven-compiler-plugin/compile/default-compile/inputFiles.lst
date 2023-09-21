@@ -1,0 +1,4 @@
+/home/joao-vitor/eclipse-workspace/product_srv/src/main/java/com/microservice/product/models/Product.java
+/home/joao-vitor/eclipse-workspace/product_srv/src/main/java/com/microservice/product/RestResource.java
+/home/joao-vitor/eclipse-workspace/product_srv/src/main/java/com/microservice/product/JaxRsActivator.java
+/home/joao-vitor/eclipse-workspace/product_srv/src/main/java/com/microservice/product/security/CorsFilter.java
