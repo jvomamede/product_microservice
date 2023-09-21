@@ -1,4 +1,0 @@
-com/microservice/product/JaxRsActivator.class
-com/microservice/product/security/CorsFilter.class
-com/microservice/product/RestResource.class
-com/microservice/product/models/Product.class
