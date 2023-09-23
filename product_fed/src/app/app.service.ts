@@ -17,7 +17,6 @@ export class AppService {
         if(error.status == 404) {
           console.log('Product Not Found');
         }
-
         return error.error;
       })
     )

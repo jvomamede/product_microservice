@@ -28,7 +28,7 @@
       <plugin>
         <groupId>org.apache.maven.pugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.9.4</version>
+        <version>3.11.0</version>
       </plugin>
       <plugin>
         <groupId>org.wildfly.plugins</groupId>

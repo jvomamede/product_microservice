@@ -7,7 +7,8 @@ import { AppService } from './app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = '';
+  
+  product: any | undefined;
 
   constructor(
     private service: AppService
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getProductById(1).subscribe((res: any) => {
-      console.log('Response: ', res)
+      this.product = res;
     })
   }
 }
