@@ -5,9 +5,15 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get("/get/product/:id")
-  getProduct(@Param('id') id: number): Promise<any> {
-    console.log('ID: ', id);
-    return this.appService.getProductById();
+  @Get("/product/get/:id")
+  public async getProduct(@Param('id') id: number): Promise<any> {
+    return await this.appService.getProductById(id);
   }
+
+  @Get("/product/all")
+  public async allProduct(): Promise<any> {
+    return await this.appService.allProduct();
+  }
+
+
 }

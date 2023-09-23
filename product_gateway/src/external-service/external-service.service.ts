@@ -7,17 +7,14 @@ import { Product } from 'src/models/product.model';
 export class ExternalService {
     constructor(private readonly httpService: HttpService) {}
 
-    public getDataFromExternalService(url?: string, id?: number, data?: Product | any): Observable<
-        Product | any
-    > {
+    public async getDataFromExternalService(
+        url?: string, 
+        method?: 'GET' | 'POST' | 'DELETE' | 'PATCH' | 'PUT', 
+        data?: Product | any, 
+        id?: string
+    ): Promise<Product | any> {
 
-        if(id) {
-            return this.httpService.get(`${url}/${id}`).pipe(
-                map((response) => response.data)
-            );
-        } 
-
-        return this.httpService.get(url).pipe(
+        return await this.httpService.get(url).pipe(
             map((response) => response.data)
         );
     }
