@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, finalize, map } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AppService {
   ) { }
 
   public getProductById(id: number): Observable<any> {
-    return this.http.get<any>(`http://localhost:8080/product/api/v1/product/getproduct/${id}`).pipe(
+    return this.http.get<any>(`${environment.GATEWAY_URL}/product/get/${id}`).pipe(
       catchError((error: HttpErrorResponse) => {
         if(error.status == 404) {
           console.log('Product Not Found');

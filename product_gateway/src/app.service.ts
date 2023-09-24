@@ -3,11 +3,12 @@ import { ExternalService } from './external-service/external-service.service';
 import { URLsExternal } from './http/url/url-external';
 import { UrlService } from './http/url/url.service';
 import { IURL } from './http/url/url-interface';
+import { Product } from './models/product.model';
 
 @Injectable()
 export class AppService {
 
-  public urls: IURL;
+  private urls: IURL;
 
   constructor(
     private externalService: ExternalService,
@@ -25,6 +26,13 @@ export class AppService {
   public async allProduct(): Promise<any> {
     return await this.externalService.getDataFromExternalService(
       `${this.urls.ALL}`
+    );
+  }
+
+  public async createProduct(product: Product): Promise<any> {
+    return await this.externalService.createDataFromExternalService(
+      this.urls.CREATE,
+      product
     );
   }
 }

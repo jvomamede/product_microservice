@@ -8,13 +8,18 @@ export class ExternalService {
     constructor(private readonly httpService: HttpService) {}
 
     public async getDataFromExternalService(
-        url?: string, 
-        method?: 'GET' | 'POST' | 'DELETE' | 'PATCH' | 'PUT', 
-        data?: Product | any, 
-        id?: string
+        url: string,
     ): Promise<Product | any> {
-
         return await this.httpService.get(url).pipe(
+            map((response) => response.data)
+        );
+    }
+
+    public async createDataFromExternalService(
+        url: string,
+        data: Product | any
+    ): Promise<Product | any> {
+        return await this.httpService.post(url, data).pipe(
             map((response) => response.data)
         );
     }

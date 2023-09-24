@@ -6,9 +6,11 @@ import { IURL } from './url-interface';
 export class UrlService {
 
     public createURLProductService(): IURL {
+        
         const URL: IURL = {
             GET_BY_ID: URLsExternal.URL_PRODUCT_SERVICE.GET_PRODUCT_BY_ID,
-            ALL: URLsExternal.URL_PRODUCT_SERVICE.ALL_PRODUCT
+            ALL: URLsExternal.URL_PRODUCT_SERVICE.ALL_PRODUCT,
+            CREATE: URLsExternal.URL_PRODUCT_SERVICE.CREATE_PRODUCT
         }
 
         return URL;
