@@ -13,13 +13,10 @@ export class AppService {
   ) { }
 
   public getProductById(id: number): Observable<any> {
-    return this.http.get<any>(`${environment.GATEWAY_URL}/product/get/${id}`).pipe(
-      catchError((error: HttpErrorResponse) => {
-        if(error.status == 404) {
-          console.log('Product Not Found');
-        }
-        return error.error;
-      })
-    )
+    return this.http.get<any>(`${environment.GATEWAY_URL}/product/get/${id}`);
+  }
+
+  public allProduct(): Observable<any> {
+    return this.http.get<any>(`${environment.GATEWAY_URL}/product/all`)
   }
 }

@@ -8,15 +8,15 @@ import { AppService } from './app.service';
 })
 export class AppComponent implements OnInit {
   
-  product: any | undefined;
+  products: Array<any> = [];
 
   constructor(
     private service: AppService
   ) {}
 
   ngOnInit(): void {
-    this.service.getProductById(1).subscribe((res: any) => {
-      this.product = res;
+    this.service.allProduct().subscribe((res) => {
+      this.products = res;
     })
   }
 }

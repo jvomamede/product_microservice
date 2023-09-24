@@ -1,4 +1,6 @@
-<app-product-details [product]="product">
-</app-product-details>
+<div *ngFor="let product of products">
+    <app-product-details [product]="product"></app-product-details>
+</div>
+
 
 <router-outlet></router-outlet>
