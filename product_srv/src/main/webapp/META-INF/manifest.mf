@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Application-Name: product_srv
+Application-Version: 1.0

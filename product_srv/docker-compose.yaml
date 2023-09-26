@@ -1,0 +1,11 @@
+version: '3'
+services:
+  wildfly:
+    container_name: product_srv_container
+    build:
+      context: . 
+      dockerfile: Dockerfile 
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target/product.war:/opt/jboss/wildfly/standalone/deployments/product.war
