@@ -9,3 +9,8 @@ services:
       - "8080:8080"
     volumes:
       - ./target/product.war:/opt/jboss/wildfly/standalone/deployments/product.war
+    networks:
+      - mynetwork  # Nome da rede personalizada
+
+networks:
+  mynetwork:

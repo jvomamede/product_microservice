@@ -3,6 +3,7 @@ package com.microservice.product.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.microservice.product.exceptions.ProductNotFoundException;
 import com.microservice.product.models.Product;
 import com.microservice.product.service.ProductService;
 
@@ -14,14 +15,19 @@ public class ProductServiceImpl implements ProductService {
     private List<Product> products = new ArrayList<>();
 
     @Override
-    public Product getProdugtById(Long id) {
-        for (Product product : products) {
-            if(product.getId().equals(id)) {
-                return product;
-            }
-        }
+    public Product getProdugtById(Long id) throws ProductNotFoundException {
+        try {
 
-        return null;
+            for (Product product : products) {
+                if(product.getId().equals(id)) {
+                    return product;
+                } 
+            }
+
+            throw new ProductNotFoundException("ERROR - NOT FOUND PRODUCT WITH ID: " + id);
+        } catch (ProductNotFoundException e) {
+            throw e;
+        }
     }
 
     @Override

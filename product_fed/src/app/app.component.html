@@ -1,6 +1,13 @@
-<div *ngFor="let product of products">
-    <app-product-details [product]="product"></app-product-details>
+<app-navbar></app-navbar>
+
+<div class="container">
+
+    <div class="row">
+        
+        <div *ngFor="let product of products" class="col">
+            <app-product-details [product]="product"></app-product-details>
+        </div>
+
+    </div>
+
 </div>
-
-
-<router-outlet></router-outlet>
